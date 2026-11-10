@@ -1,13 +1,24 @@
-<div align="center">
+<p align="center">
+  <img src="assets/hero.png" width="100%" alt="一日一页 · One Day, One PLOG">
+</p>
 
-<img src="assets/hero.png" width="100%" alt="一日一页 · One Day, One PLOG">
+<h1 align="center">一日一页 · One Day, One PLOG</h1>
 
-# 一日一页 · One Day, One PLOG
+<p align="center">
+  <b>把散落的照片，变成一页能收藏的手帐长图。</b><br>
+  <sub>Photos in. A hand-drawn PLOG out.</sub>
+</p>
 
-**把散落的照片，变成一页能收藏的手帐长图。**
-<sub>Photos in. A hand-drawn PLOG out.</sub>
+<p align="center">
+  <a href="https://susanshanx.github.io/little-day-atelier/"><img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E4%BD%93%E9%AA%8C-%E6%89%93%E5%BC%80%E5%B0%B1%E8%83%BD%E7%94%A8-3d7bb6?style=for-the-badge" alt="Live Demo"></a>
+  <a href="https://github.com/susanshanx/little-day-atelier"><img src="https://img.shields.io/badge/GitHub-%E4%BB%93%E5%BA%93-55635f?style=for-the-badge" alt="Repo"></a>
+</p>
 
-<p>
+<p align="center">
+  <sub>在线演示已内置 Key：打开 → 传照片 → 讲两句 → 直接生成，不用配置任何东西。</sub>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/%E5%8D%95%E6%96%87%E4%BB%B6-HTML-3d7bb6?style=flat-square" alt="Single HTML file">
   <img src="https://img.shields.io/badge/%E6%97%A0%E9%9C%80%E5%AE%89%E8%A3%85-%E9%9B%B6%E4%BE%9D%E8%B5%96-9aa5a0?style=flat-square" alt="No install">
   <img src="https://img.shields.io/badge/%E6%A8%A1%E5%9E%8B-%E8%B1%86%E5%8C%85%20Seed%202.1%20%2B%20Seedream-e2603f?style=flat-square" alt="Models">
@@ -15,7 +26,8 @@
   <img src="https://img.shields.io/badge/License-MIT-55635f?style=flat-square" alt="MIT">
 </p>
 
-<p>
+<p align="center">
+  <a href="https://susanshanx.github.io/little-day-atelier/"><b>▶ 在线体验（打开即用）</b></a> ·
   <a href="#quick-start">🚀 快速开始</a> ·
   <a href="#showcase">🖼️ 效果</a> ·
   <a href="#how-it-works">🧩 它是怎么工作的</a> ·
@@ -23,14 +35,13 @@
   <a href="#privacy">🔐 隐私与安全</a>
 </p>
 
-</div>
-
 ---
 
 <a id="news"></a>
 
 ## 📢 新闻 · News
 
+- **[2026.11]** 上线 **在线演示**：[打开网页就能用](https://susanshanx.github.io/little-day-atelier/)，无需配置 Key。
 - **[2026.11]** 新增 **社群配方库**：8 个可套用模板，支持上传自己的模板与故事（本地存储，单人可用）。
 - **[2026.11]** 长图右下角支持 **二维码**，扫码直接打开语音讲述页。
 - **[2026.11]** 新增 **生成轨迹**：上传 → 精选 → 印花取样 → 成页，全过程可见。
@@ -98,7 +109,11 @@
 
 ## 🚀 快速开始 · Quick Start
 
-### 1. 打开
+### 0. 只想试试？直接打开网页
+
+👉 **[https://susanshanx.github.io/little-day-atelier/](https://susanshanx.github.io/little-day-atelier/)** — 已内置演示 Key，传照片、讲两句就能生成。
+
+### 1. 本地打开
 
 直接双击 `index.html`，或用任意静态服务器：
 
@@ -110,7 +125,9 @@ python -m http.server 8000
 
 > 推荐 Chrome / Edge。语音听写需要麦克风权限；用 `localhost` 或 `https` 打开更稳妥。
 
-### 2. 填一次自己的 Key
+### 2. 填一次自己的 Key（本地运行时需要）
+
+> 用上面的在线演示可以跳过这一步：它已经内置了 Key。
 
 页面左栏底部的「让回忆成页」里：
 
@@ -261,9 +278,11 @@ python -m http.server 8000
 - **音频**：不做录音转写，语音由浏览器自带的听写服务处理（是否联网取决于浏览器），音频不会发送到豆包。
 - **长图**：导出的 PNG / JPG 里**不含 Key**；二维码只包含你填的那一行地址。
 
-> ⚠️ **公开部署前请自查**：用「保存私用 HTML」导出的副本会在 `<head>` 里带一段
-> `<meta name="plog-private-key" content="...">`。把它推到公开仓库前，请先删掉这段，或者直接用本仓库里这份
-> 已经清理过的 `index.html`。若 Key 曾经进过任何公开仓库，请立刻在方舟控制台**吊销并重建**。
+> ⚠️ **关于本仓库内置的演示 Key**：为了让人打开就能试，本仓库的 `index.html` 在 `<head>` 里放了一枚演示 Key：
+> `<meta name="plog-private-key" content="...">`。**它对所有访问者可见**，只适合小范围试用。
+> 如果你要把它用在自己的产品里，请换成自己的 Key，并在方舟控制台设置**日消费上限 / 额度告警**；
+> 想彻底不暴露 Key，就得把调用挪到后端（用服务端代理，前端不带 Key）。
+> 本项目只做前端单文件，所以这里选择"方便优先"，代价也写在这里。
 
 ---
 
